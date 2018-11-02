@@ -1,6 +1,6 @@
 import { EMPLOYEE_UPDATE } from '../actions/types';
 
-const initState = {};
+const initState = { name: '', phone: '', shift: '' };
 
 export default (state = initState, action) => {
   switch (action.type) {

@@ -4,5 +4,5 @@ import employeeFormReducer from './EmployeeFormReducer';
 
 export default combineReducers({
   auth: authReducer,
-  employeeFrom: employeeFormReducer
+  employeeForm: employeeFormReducer
 });
