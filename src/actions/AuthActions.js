@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import { Actions } from 'react-native-router-flux';
 import {
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
@@ -27,7 +28,9 @@ export const loginUser = ({ email, password }) => dispatch => {
       firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
-        .then(user => loginUserSuccess(dispatch, user))
+        .then(user => {
+          loginUserSuccess(dispatch, user);
+        })
         .catch(() =>
           dispatch({
             type: SET_ERROR,
@@ -37,8 +40,10 @@ export const loginUser = ({ email, password }) => dispatch => {
     );
 };
 
-const loginUserSuccess = (dispatch, user) =>
+const loginUserSuccess = (dispatch, user) => {
   dispatch({
     type: SET_USER,
     payload: user
   });
+  Actions.main();
+};
