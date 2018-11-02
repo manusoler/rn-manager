@@ -4,6 +4,8 @@ import { Text, SafeAreaView } from 'react-native';
 import { createStore } from 'redux';
 import reducers from './reducers';
 import firebaseInit from './config/firebase';
+import { Header } from './components/common';
+import LoginForm from './components/LoginForm';
 
 class App extends Component {
   componentWillMount() {
@@ -14,7 +16,7 @@ class App extends Component {
     return (
       <Provider store={createStore(reducers)}>
         <SafeAreaView>
-          <Text>Hello!</Text>
+          <LoginForm />
         </SafeAreaView>
       </Provider>
     );
