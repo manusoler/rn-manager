@@ -21,11 +21,11 @@ export default (authReducer = (state = initState, action) => {
     case PASSWORD_CHANGED:
       return { ...state, password: action.payload };
     case SET_USER:
-      return { ...state, loading: false, user: action.payload };
+      return { ...state, ...initState, user: action.payload, error: '' };
     case SET_ERROR:
       return { ...state, loading: false, error: action.payload };
     case SET_LOADING:
-      return { ...state, loading: true };
+      return { ...state, loading: true, error: '' };
     default:
       return state;
   }
