@@ -4,3 +4,5 @@ export const SET_USER = 'SET_USER';
 export const SET_ERROR = 'SET_ERROR';
 export const SET_LOADING = 'SET_LOADING';
 export const EMPLOYEE_UPDATE = 'EMPLOYEE_UPDATE';
+export const CLEAR_DATA = 'CLEAR_DATA';
+export const EMPLOYESS_FETCH_SUCCESS = 'EMPLOYESS_FETCH_SUCCESS';

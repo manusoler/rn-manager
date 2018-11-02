@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Picker, Text } from 'react-native';
-import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { Card, CardSection, Input, Button } from './common';
-import { employeeUpdate } from '../actions';
+import { employeeUpdate, employeeCreate } from '../actions';
 
 class EmployeeCreate extends Component {
+  onButtonPress() {
+    const { name, phone, shift } = this.props;
+    this.props.employeeCreate({ name, phone, shift });
+  }
+
   render() {
     const PickerItem = Picker.Item;
     return (
@@ -50,7 +54,7 @@ class EmployeeCreate extends Component {
           </Picker>
         </CardSection>
         <CardSection>
-          <Button onPress={() => Actions.pop()}>Save</Button>
+          <Button onPress={this.onButtonPress.bind(this)}>Save</Button>
         </CardSection>
       </Card>
     );
@@ -66,11 +70,10 @@ const styles = {
 
 const mapStateToProps = state => {
   const { name, phone, shift } = state.employeeForm;
-  console.log(name);
   return { name, phone, shift };
 };
 
 export default connect(
   mapStateToProps,
-  { employeeUpdate }
+  { employeeUpdate, employeeCreate }
 )(EmployeeCreate);
