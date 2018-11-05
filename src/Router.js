@@ -4,6 +4,7 @@ import LoginForm from './components/LoginForm';
 import EmployeeList from './components/EmployeeList';
 import EmployeeDetail from './components/EmployeeDetail';
 import EmployeeCreate from './components/EmployeeCreate';
+import EmployeeEdit from './components/EmployeeEdit';
 
 const RouterComponent = () => {
   return (
@@ -29,12 +30,12 @@ const RouterComponent = () => {
           <Scene
             key="employeeCreate"
             component={EmployeeCreate}
-            title="Employee Create"
+            title="Create Employee"
           />
           <Scene
-            key="employeeDetail"
-            component={EmployeeDetail}
-            title="Employee Detail"
+            key="employeeEdit"
+            component={EmployeeEdit}
+            title="Edit Employee"
           />
         </Stack>
       </Stack>

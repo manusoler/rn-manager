@@ -17,6 +17,27 @@ export const employeesFetch = () => dispatch => {
     });
 };
 
+export const employeeEdit = ({ name, phone, shift, uid }) => dispatch => {
+  console.log({ name, phone, shift, uid });
+  const { currentUser } = firebase.auth();
+  firebase
+    .database()
+    .ref(`/users/${currentUser.uid}/employees/${uid}`)
+    .set({ name, phone, shift })
+    .then(() => {
+      dispatch({
+        type: CLEAR_DATA
+      });
+      Actions.main();
+    })
+    .catch(err => {
+      dispatch({
+        type: SET_ERROR,
+        payload: err
+      });
+    });
+};
+
 export const employeeUpdate = ({ prop, value }) => ({
   type: EMPLOYEE_UPDATE,
   payload: { prop, value }
