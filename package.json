@@ -18,10 +18,13 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "eslint-rallycoding": "^1.2.0",
     "babel-jest": "23.6.0",
+    "eslint": "^5.8.0",
+    "eslint-config-rallycoding": "^3.2.0",
+    "eslint-plugin-import": "^2.14.0",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.48.3",
+    "prettier": "^1.14.3",
     "react-test-renderer": "16.6.0-alpha.8af6728"
   },
   "jest": {

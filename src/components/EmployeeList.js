@@ -32,7 +32,6 @@ const mapStateToProps = state => {
     ...val,
     uid
   }));
-  console.log(employees);
   return {
     employees
   };
